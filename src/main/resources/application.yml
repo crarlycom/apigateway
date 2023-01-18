@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: ms-travels-save
+          uri: lb://ms-travels-save
+          predicates:
+            - Path=/dev/travels/**
+          filters:
+            - StripPrefix=2
